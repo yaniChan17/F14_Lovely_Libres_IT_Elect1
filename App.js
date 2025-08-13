@@ -1,20 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, ScrollView} from 'react-native';
+
+import React, {useState} from 'react';
+import CounterApp from './CounterApp';
+import ColorChangerApp from './ColorChangerApp';
 
 export default function App() {
+  
+   
   return (
-    <View style={styles.container}>
-      <Text>Lovely Jana Niña Libres BSIT3 blk 3 nyahaha</Text>
-      <StatusBar style="auto" />npm
-    </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style= {styles.section}>
+      <CounterApp/>
+      </View>
+      <View style ={styles.section}>
+        <ColorChangerApp />
+      </View>
+    </ScrollView>
   );
 } 
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    padding: 20
   },
+  section:{
+    marginBottom:40
+  }
 });
