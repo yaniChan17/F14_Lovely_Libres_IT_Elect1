@@ -14,6 +14,7 @@ export default function ColorChangerApp(){
     )
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
