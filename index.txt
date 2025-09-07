@@ -1,0 +1,128 @@
+//VIEW BUTTON
+  <a asp-controller="Home" asp-action="StudentInfo" class="btn btn-primary">Student Info</a>
+  <a asp-controller="Home" asp-action="RegistrationForm" class="btn btn-secondary">Registration Form</a>
+
+
+//FORM1
+@model Lovely.Models.Expense
+
+<div class="text-center">
+    <h1 class="display-4">Student Information</h1>
+
+</div>
+
+<form asp-action="Index" asp-controller="Home">
+
+<label>Id</label>
+<input class="form-control" type="number" placeholder="" asp-for="Id" />
+<label class="mt-1">First Name</label>
+<input class="form-control" type="text" placeholder="" asp-for="Fname" />
+
+<label>Middle Name</label>
+<input class="form-control" type="text" placeholder="" asp-for="Mname" />
+
+<label>Last Name</label>
+<input class="form-control" type="text" placeholder="" asp-for="Lname" />
+
+<label>Address</label>
+<input class="form-control" type="text" placeholder="" asp-for="Address" />
+
+<label>Age</label>
+<input class="form-control" type="number" placeholder="" asp-for="Age" />
+
+<button type="submit" class="btn btn-primary mt-3" >ok</button>
+</form>
+
+
+//FORM2 WITH RADIO
+@model Lovely.Models.RegistrationForms
+
+<div class="text-center">
+    <h1 class="display-4">Registration Form</h1>
+
+</div>
+
+<form method="post" asp-action="RegistrationResult" asp-controller="Home">
+
+    <label>Full Name</label>
+    <input class="form-control" type="name" placeholder="enter fullname" asp-for="Fullname" required />
+
+    <label>Email Address</label>
+    <input class="form-control" type="name" placeholder="enter email" asp-for="Email" required/>
+
+    <label>Password</label>
+    <input class="form-control" type="password" placeholder="enter password" asp-for="Password" required />
+
+    <div>
+    <label class="mt-2">Gender</label>
+    <input type="radio" asp-for="Gender"  value="Female"/> Female
+    <input type="radio" asp-for="Gender" value="Male" /> Male
+    </div>
+
+    <div>
+    <label class="mt-2">Course</label>
+    <select class="form-select" asp-for="Course" required>
+    <option value="BSIT">BSIT</option>
+    <option value="BSOA">BSOA</option>
+    <option value="BSCS">BSCS</option>
+    </select>
+    </div>
+
+     <div class="d-flex justify-content-center">
+     <button type="submit" class="btn btn-primary">register</button>
+    </div>
+</form>
+
+
+//FOR RESULT
+@model Lovely.Models.RegistrationForms
+
+<div class="text-center">
+    <h1 class="display-4">Registration Result</h1>
+
+</div>
+
+<p><strong>Full Name:</strong> @Model.Fullname</p>
+<p><strong>Email Address:</strong> @Model.Email</p>
+<p><strong>Gender:</strong> @Model.Gender</p>
+<p><strong>Course:</strong> @Model.Course</p>
+
+<a asp-action="Index" asp-controller="Home" type="submit" class="btn btn-primary">ok</a>
+
+
+
+//CONTROLLER
+ public IActionResult StudentInfo()
+ {
+     return View();
+ }
+ public IActionResult StudentInfoForm(Expense models)
+ {
+     return RedirectToAction("Index");
+ }
+ public IActionResult RegistrationForm()
+ {
+     return View();
+ }
+ public IActionResult RegistrationResult(RegistrationForms result)
+ {
+     if (result == null)
+     {
+         return Content("Error");
+     }
+     return View( result);
+ }
+
+
+ //MODELS
+        public string? Fullname { get; set; }
+
+        public string? Email{ get; set; }
+
+        public string? Password { get; set; }
+
+        public string? Gender { get; set; }
+
+        public string? Course { get; set; }
+    
+//

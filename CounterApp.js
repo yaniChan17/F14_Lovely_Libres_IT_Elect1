@@ -16,6 +16,7 @@ export default function CounterApp (){
 }
 
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
