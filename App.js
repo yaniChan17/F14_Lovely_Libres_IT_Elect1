@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+// Import your two screens
+import MessengerScreen from "./MessengerScreen";
+import CommentScreen from "./CommentScreen";
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Lovely Jana Niña Libres BSIT3 blk 3</Text>
-      <StatusBar style="auto" />npm
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={{ headerShown: true }}>
+        <Tab.Screen name="Messenger" component={MessengerScreen} />
+        <Tab.Screen name="Comments" component={CommentScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
