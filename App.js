@@ -4,8 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Import your two screens
-import MessengerScreen from "./MessengerScreen";
-import CommentScreen from "./CommentScreen";
+import MessengerScreen from "./Components/MessengerScreen";
+import CommentScreen from "./Components/CommentScreen";
 
 const Tab = createBottomTabNavigator();
 
