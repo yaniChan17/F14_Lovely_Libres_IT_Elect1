@@ -1,9 +1,7 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-// Import your two screens
 import MessengerScreen from "./Components/MessengerScreen";
 import CommentScreen from "./Components/CommentScreen";
 
