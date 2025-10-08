@@ -1,19 +1,18 @@
 import React from "react";
-
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SafeAreaView, StyleSheet } from "react-native";
 import MessengerScreen from "./Components/MessengerScreen";
-import CommentScreen from "./Components/CommentScreen";
-
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={{ headerShown: true }}>
-        <Tab.Screen name="Messenger" component={MessengerScreen} />
-        <Tab.Screen name="Comments" component={CommentScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <MessengerScreen />
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+});
