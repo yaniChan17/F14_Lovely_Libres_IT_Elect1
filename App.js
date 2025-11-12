@@ -1,20 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AuthProvider } from './context/AuthContext';
+import RootNavigator from './navigation/RootNavigator';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Lovely Jana Niña Libres BSIT3 blk 3 nyahaha</Text>
-      <StatusBar style="auto" />npm
-    </View>
+    <AuthProvider>
+      <RootNavigator />
+      <StatusBar style="auto" />
+    </AuthProvider>
   );
-} 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+}
