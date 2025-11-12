@@ -50,6 +50,8 @@ A full-featured messaging and social media application built with React Native a
 
 ### Installation
 
+⚠️ **Having installation issues?** See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for solutions to common problems.
+
 1. Clone the repository
 ```bash
 git clone <repository-url>
@@ -58,6 +60,18 @@ cd F14_Lovely_Libres_IT_Elect1
 
 2. Install dependencies
 ```bash
+# Recommended: Use Expo install for correct versions
+npx expo install
+
+# Or use npm (make sure versions match Expo SDK 53)
+npm install
+```
+
+3. If you encounter module resolution errors:
+```bash
+# Clear cache and reinstall
+rm -rf node_modules package-lock.json
+npm cache clean --force
 npm install
 ```
 
